@@ -1,0 +1,22 @@
+.content__title
+  記事の投稿
+
+  .tag
+
+  = form_for @blog, class:'form' do |f|
+    .tag-label
+      = f.label :tag
+    .tag-input
+      =f.text_field :tag_name, value: @tag_list
+    .field
+      .field-label
+        = f.label :title
+      .field-input
+        = f.text_field :title
+    .field
+      .field-label
+        = f.label :body
+      .field-input
+        = f.text_field :body
+    .actions
+      = f.submit "投稿する", class: 'btn'

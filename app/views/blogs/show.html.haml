@@ -1,0 +1,13 @@
+.box1
+  .article1
+    .title1
+      = @blog.title
+    .blogDate
+      = @blog.created_at
+    .body1
+      = @blog.body
+
+    - if user_signed_in? && current_user.id == @blog.user_id
+      .blogManage
+        = link_to "編集", edit_blog_path(@blog.id), class: "blog-edit"
+        = link_to "削除", blog_path(@blog.id), method: :delete, class: "blog-delete"
