@@ -11,6 +11,8 @@
           = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
         .time
           =blog.created_at
+
+    = paginate(@blogs)
   .tags-list
     タグ一覧
   .tag

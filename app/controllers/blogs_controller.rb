@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.includes(:user)
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @tags = Tag.all
   end
 
