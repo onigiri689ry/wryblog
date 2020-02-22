@@ -1,8 +1,12 @@
 .box
-
-  - @blogs.each do |blog|
-    .article
-      .title
-        = link_to blog.title, blog_path(blog.id)
-      .time
-        =blog.created_at
+  .article-list
+    記事一覧
+  .article-list2
+    - @blogs.each do |blog|
+      .article
+        .title
+          = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
+        .username
+          = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
+        .time
+          =blog.created_at
