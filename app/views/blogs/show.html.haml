@@ -11,3 +11,21 @@
       .blogManage
         = link_to "編集", edit_blog_path(@blog.id), class: "blog-edit"
         = link_to "削除", blog_path(@blog.id), method: :delete, class: "blog-delete"
+  
+  .comentnew
+    - if current_user
+      = form_for([@blog, @comment], local: true) do |f|
+        = f.text_area :text, placeholder: "コメントする", rows: "2"
+        = f.submit "SEND"
+    - else
+      %strong
+        ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+  .comentshow
+    %h4 
+      コメント一覧
+      - if @comments
+        - @comments.each do |comment|
+          %strong.comments1
+            =link_to comment.user.nickname, "/users/#{comment.user_id}"
+          = comment.text
