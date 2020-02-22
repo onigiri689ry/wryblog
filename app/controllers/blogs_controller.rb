@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
- def index
+  def index
     @blogs = Blog.includes(:user)
     @tags = Tag.all
   end
