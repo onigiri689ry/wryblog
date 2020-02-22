@@ -2,6 +2,7 @@ class Blog < ApplicationRecord
   has_many :tagmaps, dependent: :destroy
   has_many :tags, through: :tagmaps
   belongs_to :user
+  has_many :comments
 
   def save_blogs(tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
