@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20200222083003) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.text     "body",       limit: 65535
+    t.string   "title",                    null: false
+    t.text     "body",       limit: 65535, null: false
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20200222083003) do
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "blog_id"
-    t.text     "text",       limit: 65535
+    t.text     "text",       limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20200222083003) do
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tag_name"
+    t.string   "tag_name",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag_name"], name: "index_tags_on_tag_name", unique: true, using: :btree
