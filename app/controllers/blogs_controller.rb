@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+
   def index
     @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @tags = Tag.all
@@ -27,6 +28,10 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @comment = Comment.new
     @comments = @blog.comments.includes(:user)
+  end
+
+  def search
+    @blogs = Blog.search(params[:search])
   end
 
   def edit

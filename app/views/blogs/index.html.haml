@@ -1,4 +1,13 @@
+-# = form_tag url: search_blogs_path, local: true, method: :get, class: "search-form" 
+-#   = text_field_tag :search, placeholder: "投稿を検索する", class: "search-input"
+-#   = submit_tag "検索", class: "search-btn"
 
+.boxbox
+  %p.mozi 記事を検索
+.search1 
+  = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
+    = text_field_tag :search 
+    = submit_tag 'Search', :name => nil 
 .box
   .article-list
     記事一覧
@@ -7,10 +16,11 @@
       .article
         .title
           = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
-        .username
-          = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
-        .time
-          =blog.created_at
+        .nametime
+          .username
+            = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
+          .time
+            =blog.created_at
 
     = paginate(@blogs)
   .tags-list
@@ -19,3 +29,4 @@
     - @tags.each do |tag|
       .tag-details
         = link_to tag.tag_name, tag_path(tag.id), class: 'tag-details-blogs'
+  %button.button1 遊び心
