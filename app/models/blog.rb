@@ -4,6 +4,11 @@ class Blog < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  def self.search(search)
+    return Blog.all unless search
+    Blog.where(['title LIKE ?', "%#{search}%"])
+  end
+
   def save_blogs(tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     old_tags = current_tags - tags
