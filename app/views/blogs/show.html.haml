@@ -1,17 +1,18 @@
 .box1
   .article1
-    .title1
-      = @blog.title
     .blogDate
       = @blog.created_at
-    .body1
+    .title1
+      = @blog.title
+    .article1-body
       = @blog.body
 
     - if user_signed_in? && current_user.id == @blog.user_id
       .blogManage
-        = link_to "編集", edit_blog_path(@blog.id), class: "blog-edit"
-        = link_to "削除", blog_path(@blog.id), method: :delete, class: "blog-delete"
+        = link_to "編集", edit_blog_path(@blog.id), class: "blog-btn"
+        = link_to "削除", blog_path(@blog.id), method: :delete, class: "blog-btn"
   
+.box1
   .comentnew
     - if current_user
       = form_for([@blog, @comment], local: true, id: "new_comment")  do |f|
@@ -23,9 +24,10 @@
 
   .comments-a
     %h4 
-      コメント一覧
-      - if @comments
-        - @comments.each do |comment|
-          %strong
-            =link_to comment.user.nickname, "/users/#{comment.user_id}"
-          = comment.text
+      <コメント一覧>
+    - if @comments
+      - @comments.each do |comment|
+        .comment-b
+          %strong.com
+            =link_to comment.user.nickname, "/users/#{comment.user_id}", class:"com-user"
+            = comment.text
