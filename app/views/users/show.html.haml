@@ -1,13 +1,6 @@
-.boxbox
-  %p.mozi 記事を検索
-.search1 
-  = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
-    = text_field_tag :search 
-    .search2
-      = submit_tag 'Search', :name => nil ,class: "search10"
 .box
   .article-list
-    記事一覧
+    = @user.nickname
   .article-list2
     - @blogs.each do |blog|
       .article

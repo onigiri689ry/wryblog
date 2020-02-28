@@ -1,0 +1,53 @@
+.new-title{
+  text-align:  center; 
+  clear: both;
+  margin-bottom: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  background: #80ad45;
+  border-radius: 10px;
+}
+
+.new-blog{
+  text-align:  center; 
+  .field{
+    font-size: 16px;
+    margin-top: 40px;
+    .field-label{
+      height: 100%;
+      width: 100%;
+    }
+    .field-input{
+      height: 100%;
+      width: 100%;
+      #blog_title{
+        height: 100%;
+        width: 100%;
+        border: ridge;
+        border-color: #80ad45;
+      }
+      #blog_tag_name{
+        height: 100%;
+        width: 100%;
+        border: ridge;
+        border-color: #80ad45;
+      }
+    }
+  }
+  .field-body{
+    font-size: 16px;
+    margin-top: 40px;
+    & textarea {
+      width: 100%;
+      min-height: 300px;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      border: ridge;
+      border-color: #80ad45;
+    }
+  }
+  .actions{
+    padding-bottom: 30px;
+  }
+}

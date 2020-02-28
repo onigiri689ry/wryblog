@@ -31,7 +31,7 @@ class BlogsController < ApplicationController
   end
 
   def search
-    @blogs = Blog.search(params[:search])
+    @blogs = Blog.search(params[:search]).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def edit

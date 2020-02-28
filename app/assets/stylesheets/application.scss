@@ -14,30 +14,82 @@
  *= require_self
  */
 
-.header{
-  height: 15vh;
-  width: 80%;
-  text-align:  center;  
-  margin: 10px auto;
+@-webkit-keyframes bg-color {
+  0% { background-color:#FFFAFA;}
+  20% { background-color: #FFFFF0; }
+  40% { background-color: #FFFAF0; }
+  60% { background-color: #F8F8FF; }
+  80% { background-color: #F5F5F5; }
+  100% { background-color: #FFFFEE; }
+}
+@keyframes bg-color {
+  0% { background-color: #FFFAFA; }
+  20% { background-color: #FFFFF0; }
+  40% { background-color: #FFFAF0; }
+  60% { background-color: #F8F8FF; }
+  80% { background-color: #F5F5F5; }
+  100% { background-color: #FFFFEE; }
+}
+
+body {
+  background-color: #F8F8FF;
+  animation: bg-color 20s infinite;
+  -webkit-animation: bg-color 20s infinite;
+
+  .header{
+    height: 15vh;
+    width: 80%;
+    text-align:  center;  
+    margin: 10px auto;
     .title{
       font-size: 60px;
       color: green;
+    }
+    .btn-a {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #80ad45;
+    border: solid 2px #80ad45;
+    border-radius: 3px;
+    transition: .4s;
+    }
+    .btn-a:hover {
+      background: #80ad45;
+      color: #80ad45;
+    }
+    .current_user{
+      display: inline-block;
+      text-decoration: none;
+      background: #80ad45;
+      color: #FFF;
+      width: 15%;
+      border-radius: 50%;
+      text-align: center;
+      overflow: hidden;
+      transition: .4s;
+    }
+
+    .btn-circle-flat:hover {
+      background: #80ad45;
+    }
   }
-}
 
-.image{
-  width: 100%;
-  margin: 50px auto;
-  text-align:  center; 
-  &1{
-    height: 150px;
-    width: 80%;
+
+  .image{
+    width: 100%;
+    margin: 30px auto;
+    text-align:  center; 
+    &1{
+      height: 150px;
+      width: 80%;
+    }
+
   }
 
-}
 
 
-
-a{
-  text-decoration: none;
+  a{
+    text-decoration: none;
+  }
 }
