@@ -8,15 +8,15 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      = link_to "title", root_path, class: 'title'
+      = link_to "wryblog", root_path, class: 'title'
 
       -if user_signed_in?
-        = link_to current_user.nickname, user_path(current_user), class: "aa"
-        = link_to "新規投稿", new_blog_path, class: "a" 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "d" 
+        = link_to "新規投稿", new_blog_path, class: "btn-a" 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-a" 
+        = link_to current_user.nickname, user_path(current_user), class: "current_user"
       -else
-        = link_to "ログイン", new_user_session_path, class: "c" 
-        = link_to "新規登録", new_user_registration_path, class: "b"
+        = link_to "ログイン", new_user_session_path, class: "btn-a" 
+        = link_to "新規登録", new_user_registration_path, class: "btn-a"
     .image
       = image_tag 'mori.jpg', class: 'image1'
 
