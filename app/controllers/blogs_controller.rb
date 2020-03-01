@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :show, :destroy]
 
   def index
-    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     @tags = Tag.all
   end
 
