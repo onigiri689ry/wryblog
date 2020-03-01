@@ -11,13 +11,16 @@
   .article-list2
     - @blogs.each do |blog|
       .article
-        .title
-          = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
-        .nametime
-          .username
-            = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
-          .time
-            =blog.created_at
+        .blogimage
+          = image_tag blog.images[0].image_url,class:"blogimage-img"
+        .details
+          .title
+            = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
+          .nametime
+            .username
+              = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
+            .time
+              =blog.created_at
     .pager
       = paginate(@blogs)
     
@@ -27,5 +30,3 @@
     - @tags.each do |tag|
       .tag-details
         = link_to tag.tag_name, tag_path(tag.id), class: 'tag-details-blogs'
--# .box10
--# %button.button1 遊び心
