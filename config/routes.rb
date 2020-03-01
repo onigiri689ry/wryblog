@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :tags, only:[:index, :show]
   resources :tagmaps, only:[:index,:show]
   resources :users, only: :show
+  resources :image, only: :destroy
 end

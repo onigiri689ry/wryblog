@@ -1,53 +1,153 @@
-.new-title{
-  text-align:  center; 
-  clear: both;
-  margin-bottom: 20px;
-  color: #fff;
-  padding: 10px 20px;
-  background: #80ad45;
-  border-radius: 10px;
+
+.container {
+  padding: 2% 5%;
+	color: #666;	/*全体の文字色*/
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+  width: 100%;
+
+  .new-title1{
+    clear: both;
+    margin-bottom: 2%;
+    color: #fff;
+    padding: 10px 20px;
+    background: #80ad45;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .new-blog{
+    height: 100%;
+    width: 100%;
+    .field{
+      font-size: 16px;
+      margin-top: 2%;
+      .field-label{
+        height: 100%;
+        width: 100%;
+      }
+      .field-input{
+        height: 100%;
+        width: 100%;
+        #blog_title{
+          height: 100%;
+          width: 100%;
+          border: ridge;
+          border-color: #80ad45;
+        }
+        #blog_tag_name{
+          height: 100%;
+          width: 100%;
+          border: ridge;
+          border-color: #80ad45;
+        }
+      }
+    }
+
+    .write {
+      width: 100%;
+      margin: 0 auto;
+      &__image {
+        padding: 40px;
+        & label {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        & .max {
+          margin-top: 8px;
+          line-height: 1.5;
+        }
+        & input {
+          display: none;
+        }
+        &-select {
+          position: relative;
+          width: 100%;
+          min-height: 162px;
+          padding: 60px 40px;
+          background-color: white;
+          border: ridge;
+          border-color: #80ad45;
+          margin-top: 16px;
+          text-align: left;
+          line-height: 1.5;
+          font-size: 14px!important;
+          font-weight: 600;
+          letter-spacing: -2.3px;
+          vertical-align: middle;
+          cursor: pointer;
+          &__ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            &-text {
+              display: inline-block;
+              float: left;
+              height: 162px;
+              width: 20%;
+              right: 0px;
+              cursor: pointer;
+              opacity: 0;
+              border-left: 1px dashed;
+              border-right: 1px dashed;
+              & li {
+                width: 114px;
+                height: 116px;
+                margin: 0 auto;
+                & img {
+                  object-fit: contain;
+                }
+              }
+              & .btn-box {
+                & a {
+                  display: inline-block;
+                  float: left;
+                  width: calc(50% - 1px);
+                  height: 44px;
+                  line-height: 44px;
+                  border: 1px solid #f0f0f0;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .blog-actions{
+      padding-bottom: 30px;
+      padding-top:20px;
+      .blog-btn{
+        width: 100%;
+        display: inline-block;
+        background: #80ad45;
+        border: 1px solid darken( #80ad45, 5%);
+        padding: .5em 2em;
+        color: white;
+        margin-right: .5em;
+        box-shadow: inset 0px 1px 0px fadeout(white, 80%); 
+        &:hover {
+          background: lighten( #80ad45, 5%);
+        }
+      }
+    }
+    .field-body{
+      font-size: 16px;
+      margin-top: 40px;
+      & textarea {
+        width: 100%;
+        min-height: 300px;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        border: ridge;
+        border-color: #80ad45;
+      }
+    }
+  }
 }
 
-.new-blog{
-  text-align:  center; 
-  .field{
-    font-size: 16px;
-    margin-top: 40px;
-    .field-label{
-      height: 100%;
-      width: 100%;
-    }
-    .field-input{
-      height: 100%;
-      width: 100%;
-      #blog_title{
-        height: 100%;
-        width: 100%;
-        border: ridge;
-        border-color: #80ad45;
-      }
-      #blog_tag_name{
-        height: 100%;
-        width: 100%;
-        border: ridge;
-        border-color: #80ad45;
-      }
-    }
-  }
-  .field-body{
-    font-size: 16px;
-    margin-top: 40px;
-    & textarea {
-      width: 100%;
-      min-height: 300px;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      border: ridge;
-      border-color: #80ad45;
-    }
-  }
-  .actions{
-    padding-bottom: 30px;
-  }
-}

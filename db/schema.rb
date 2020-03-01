@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200222083003) do
+ActiveRecord::Schema.define(version: 20200228083111) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",                    null: false
-    t.text     "body",       limit: 65535, null: false
+    t.string   "title"
+    t.text     "body",       limit: 65535
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20200222083003) do
     t.text     "text",       limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "image_url",  default: "mori.jpg", null: false
+    t.integer  "blog_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["blog_id"], name: "index_images_on_blog_id", using: :btree
   end
 
   create_table "tagmaps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,4 +63,5 @@ ActiveRecord::Schema.define(version: 20200222083003) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "images", "blogs"
 end
