@@ -15,6 +15,7 @@
 - ページネーションの実装
 - ブログの新しい記事が上に表示される機能
 - タイトル検索機能
+- 画像複数枚登録
 
 ## アプリケーション内で使用している技術一覧
 
@@ -25,6 +26,7 @@
 |マークアップ|HTML(Haml),CSS(Sass)|
 |フロントエンド|JavaScript(jQuery)|
 |DB|MySQL|
+|画像アップロード|carrierwave, AWS S3|
 |本番環境|AWS EC2|
 |自動デプロイ|capistrano|
 |ユーザー管理|devise|
@@ -39,6 +41,8 @@
 |user_id|integer|
 
 #### Association
+- has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
 - has_many :tagmaps, dependent: :destroy
 - has_many :tags, through: :tagmaps
 - belongs_to :user
@@ -89,3 +93,11 @@
 - belongs_to :blog
 - belongs_to :user 
 
+#### Imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image_url|string|null: false|
+|blog|references|foreign_key: true|
+
+#### Association
+- belongs_to :blog, optional: true
