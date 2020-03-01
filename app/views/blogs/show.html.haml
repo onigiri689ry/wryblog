@@ -1,11 +1,21 @@
-.box1
-  .article1
-    .blogDate
-      = @blog.created_at
-    .title1
-      = @blog.title
-    .article1-body
-      = @blog.body
+- image = @blog.images.first
+.show-backbround-color
+  .show-main
+    .content
+      .product
+        .item-box
+          .item-box__body
+            %ul
+              %li
+                = image_tag image.image_url.url,class:"main-image"
+                %ul
+                  - @blog.images.each do |image|
+                    %li
+                      = image_tag image.image_url.url,class:"image-list"
+          .item-box__name
+            = @blog.title
+          .aaa
+            = @blog.body
 
     - if user_signed_in? && current_user.id == @blog.user_id
       .blogManage
