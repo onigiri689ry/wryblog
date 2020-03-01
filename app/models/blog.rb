@@ -1,8 +1,16 @@
 class Blog < ApplicationRecord
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_many :tagmaps, dependent: :destroy
   has_many :tags, through: :tagmaps
   belongs_to :user
   has_many :comments
+
+  validates :title,               presence: true
+  validates :body,                presence: true
+  # validates :image_url,           presence: true
+
+
 
   def self.search(search)
     return Blog.all unless search
