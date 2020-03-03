@@ -97,13 +97,14 @@
             &-text {
               display: inline-block;
               float: left;
-              height: 162px;
+              height: 100%;
               width: 20%;
               right: 0px;
               cursor: pointer;
               opacity: 0;
-              border-left: 1px dashed;
-              border-right: 1px dashed;
+              border-left: 1px solid #80ad45;
+              border-right: 1px solid #80ad45;
+              background-color: white;
               & li {
                 width: 114px;
                 height: 116px;
@@ -114,13 +115,13 @@
               }
               & .btn-box {
                 & a {
-                  display: inline-block;
                   float: left;
-                  width: calc(50% - 1px);
+                  width: 50%;
                   height: 44px;
                   line-height: 44px;
                   border: 1px solid #f0f0f0;
                   font-size: 14px;
+                  padding-left: 15%;
                 }
               }
             }
