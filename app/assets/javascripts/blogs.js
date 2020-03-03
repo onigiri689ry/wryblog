@@ -1,15 +1,26 @@
 $(function () {
-  console.log("hello")
   var buildInputFile = function (num) {
     var input = `<input data-id="${num}" type="file" name="blog[images_attributes][${num}][image_url]" id="blog_images_attributes_${num}_image_url">`
     return input
   }
 
-  // var blog_img = $('.write_image')
-  // if (blog_img.length)
-  //   blog_img.parents('.write__image-select__ul-text').css('opacity', 1);
-  // blog_img.parent().next('.btn-box').css('display', 'block');
+  var blog_img = $('.write_image')
+  if (blog_img.length)
+    blog_img.parents('.write__image-select__ul-text').css('opacity', 1);
+  blog_img.parent().next('.btn-box').css('display', 'block');
   
+  $(".blog-detail__top__item-image-list__inner").on({
+    'mouseenter': function () {
+      var child = $(this).children();
+      url = $(child).attr('src');
+      inner_id = $(child).data('inner_id');
+      photo = $('.blog-detail__top__item-image-main--photo');
+      main = $("#main_" + inner_id);
+      $(photo).fadeOut();
+      $(main).fadeIn();
+    }
+  });
+
   $('.write__image-select__ul-text').on('change', 'input[type="file"]', function (e) {
     var id = $(this).data('id'),
       file = e.target.files[0],

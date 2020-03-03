@@ -7,8 +7,17 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  namespace :api do
+    resources  controller: :blogs, only: :image_destroy, defaults: { format: 'json' } do
+      collection do
+        delete "image_destroy"
+      end
+    end
+  end
+
   resources :tags, only:[:index, :show]
   resources :tagmaps, only:[:index,:show]
   resources :users, only: :show
-  resources :image, only: :destroy
+  resources :images, only: :destroy
 end
