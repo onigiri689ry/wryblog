@@ -7,11 +7,13 @@
       .field
         .field-label
           = f.label :tag,"タグ"
+          %span.required
         .field-input
           =f.text_field :tag_name, value: @tag_list
       .write
         .write__image
           =f.label :image, "写真投稿"
+          %span.required
           %p.max 最大5枚までアップロードできます
           .write__image-select
             メイン写真　　　ここをクリックしてファイルをアップロード
@@ -27,11 +29,13 @@
       .field
         .field-label
           = f.label :title, "タイトル"
+          %span.required
         .field-input
           = f.text_field :title
       .field-body
         .field-label-body
           = f.label :body, "本文"
+          %span.required
         .field-input-body
           = f.text_area :body
       .blog-actions
