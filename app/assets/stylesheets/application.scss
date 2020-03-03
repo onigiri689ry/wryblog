@@ -39,10 +39,9 @@ body {
   height: 100vh;
 
   .header{
-    height: 15vh;
     width: 80%;
     text-align:  center;  
-    margin: 10px auto;
+    margin: 1% auto;
     .title{
       font-size: 60px;
       color: green;
@@ -76,20 +75,6 @@ body {
       background: #80ad45;
     }
   }
-
-
-  // .image{
-  //   width: 100%;
-  //   margin: 30px auto;
-  //   text-align:  center; 
-  //   &1{
-  //     height: 150px;
-  //     width: 80%;
-  //   }
-
-  // }
-
-
 
   a{
     text-decoration: none;
