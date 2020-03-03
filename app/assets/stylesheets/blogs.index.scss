@@ -9,9 +9,9 @@
 	line-height: 2;		/*行間*/
   .mozi {
     clear: both;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     color: #fff;
-    padding: 10px 20px;
+    padding: 1% 2%;
     background: #80ad45;
     border-radius: 10px;
   }
@@ -66,12 +66,10 @@
   .article-list2{
     padding: 10px; 
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     .article{
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      padding-top: 20px;
-      padding-bottom: 20px;
       display: flex;
       height: 33%;
       width: 100%;
@@ -80,8 +78,9 @@
         width: 50%;
         margin: 0 auto;
         &-img{
-          height:100%;
+          height:80%;
           width: 200px;
+
         }
       }
     

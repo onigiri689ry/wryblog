@@ -5,7 +5,8 @@
     - @blogs.each do |blog|
       .article
         .blogimage
-          = image_tag blog.images[0].image_url,class:"blogimage-img"
+          = link_to blog_path(blog.id), class: "www" do
+            = image_tag blog.images[0].image_url,class:"blogimage-img"
         .details
           .title
             = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
