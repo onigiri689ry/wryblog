@@ -45,20 +45,13 @@ class BlogsController < ApplicationController
   end
 
   def update
-
-    # respond_to do |format|
-      if tag_list = params[:blog][:tag_name].split(",")
-        @blog.update(update_params) && params.require(:blog).keys[0] == "images_attributes"
-        @blog.save_blogs(tag_list)
-        redirect_to root_path ,notice: '商品を編集しました'
-      #   format.html { redirect_to @blog, notice: '記事を編集しました' }
-      #   format.json { render :show, status: :update, location: @blog }
-      else
-        # format.html { render :edit }
-        # format.json { render json: @blog.errors, status: :unprocessable_entity }
-        redirect_to root_path
-      end
-    # end
+    if tag_list = params[:blog][:tag_name].split(",") 
+      @blog.update(update_params) && params.require(:blog).keys[0] == "images_attributes"
+      @blog.save_blogs(tag_list)
+      redirect_to root_path ,notice: '商品を編集しました'
+    else
+      render :edit
+    end
   end
 
   def destroy
