@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+@import "slick-theme";
+@import "slick";
+@import "carousel";
