@@ -15,5 +15,4 @@
 //= require_tree .
 
 @import "slick-theme";
-@import "slick";
 @import "carousel";
