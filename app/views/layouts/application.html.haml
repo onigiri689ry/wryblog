@@ -10,14 +10,14 @@
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
   %body
     .header
-      = link_to "wryblog", root_path, class: 'title'
+    -#   = link_to "wryblog", root_path, class: 'title'
 
-      -if user_signed_in?
-        = link_to "新規投稿", new_blog_path, class: "btn-a" 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-a" 
-        = link_to current_user.nickname, user_path(current_user), class: "current_user"
-      -else
-        = link_to "ログイン", new_user_session_path, class: "btn-a" 
-        = link_to "新規登録", new_user_registration_path, class: "btn-a"
+    -#   -if user_signed_in?
+    -#     -# = link_to "新規投稿", new_blog_path, class: "btn-a" 
+    -#     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-a" 
+    -#     = link_to current_user.nickname, user_path(current_user), class: "current_user"
+    -#   -else
+    -#     = link_to "ログイン", new_user_session_path, class: "btn-a" 
+    -#     = link_to "新規登録", new_user_registration_path, class: "btn-a"
 
     = yield

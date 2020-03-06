@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 @-webkit-keyframes bg-color {
   0% { background-color:#FFFAFA;}
   20% { background-color: #FFFFF0; }

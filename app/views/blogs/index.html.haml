@@ -1,3 +1,5 @@
+= render partial: 'header' 
+
 .boxbox
   %p.mozi 記事を検索
 .search1 
@@ -39,3 +41,4 @@
         = link_to tag.tag_name, tag_path(tag.id), class: 'tag-details-blogs'
 
 
+= render partial: 'footer' 

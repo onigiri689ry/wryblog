@@ -1,0 +1,69 @@
+.dropdwn{
+    max-width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 0 3%;
+    background-color: #002200;
+    height: 70px;
+    text-align: center;
+}
+
+.bigtitle{
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+    color: #fff;
+    letter-spacing:5px;
+}
+
+.name{
+    font-size: 30px;
+    margin: 20px 0 0 0;
+    color:#fff;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+li{
+    max-width: calc(1200px/5);
+    position: relative;
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdwn>li{
+    width: 100px;
+    margin: 1px;
+    display: inline;
+}
+
+i{
+    font-size: 30px;
+    margin-top: 15px;
+    color:#fff;
+}
+
+.dropdwn_menu{
+    width: 100%;
+    display: none;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 5px;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.dropdwn_menu li{
+    width: 100%;
+}
+
+.dropdwn_menu li a{
+    padding: 5px 0;
+    display: block;
+    color: rgb(65, 65, 65);
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+li a:hover{
+    color: green;
+}
