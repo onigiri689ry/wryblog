@@ -1,15 +1,15 @@
 -# = render partial: 'header' 
 
 .boxbox
-  %p.mozi 記事を検索
-.search1 
-  = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
-    = text_field_tag :search 
-    .search2
-      = submit_tag 'Search', :name => nil ,class: "search10"
+  -# %p.mozi 記事を検索
+-# .search1 
+-#   = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
+-#     = text_field_tag :search 
+-#     .search2
+-#       = submit_tag 'Search', :name => nil ,class: "search10"
 .box
-  .article-list
-    記事一覧
+  -# .article-list
+  -#   記事一覧
   .slick-box
     .slick
       - @blogs.each do |blog|
@@ -33,8 +33,8 @@
     .pager
       = paginate(@blogs)
     
-  .tags-list
-    タグ一覧
+  -# .tags-list
+  -#   タグ一覧
   .tag
     - @tags.each do |tag|
       .tag-details

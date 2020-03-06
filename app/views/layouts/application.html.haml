@@ -12,33 +12,37 @@
     %ul.dropdwn
       %li
         = link_to "wryblog", root_path, class: 'bigtitle'
+      .kkk
+        .search1 
+          = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
+            = text_field_tag :search 
+            -# %p.fas.fa-search
+            .search2
+              = submit_tag 'Search', :name => nil ,class: "search10"
 
-      -if user_signed_in?
-        %li
-          %p.name
-            = current_user.nickname
-          %ul.dropdwn_menu
-            %li
-              = link_to "記事一覧", user_path(current_user),class:"dropdwn-a"
-            %li
-              = link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"dropdwn-a"
+        -if user_signed_in?
+          %li
+            %p.name
+              = current_user.nickname
+            %ul.dropdwn_menu
+              %li
+                = link_to "記事一覧", user_path(current_user),class:"dropdwn-a"
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"dropdwn-a"
 
-      -else
-        %li
-          %i.fas.fa-door-open
-          %ul.dropdwn_menu
-            %li
-              = link_to "ログイン", new_user_session_path ,class:"dropdwn-a"
-            %li
-              = link_to "新規登録", new_user_registration_path,class:"dropdwn-a"
-    -#   = link_to "wryblog", root_path, class: 'title'
+        -else
+          %li
+            %i.fas.fa-door-open
+            %ul.dropdwn_menu
+              %li
+                = link_to "ログイン", new_user_session_path ,class:"dropdwn-a"
+              %li
+                = link_to "新規登録", new_user_registration_path,class:"dropdwn-a"
 
-    -#   -if user_signed_in?
-    -#     -# = link_to "新規投稿", new_blog_path, class: "btn-a" 
-    -#     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-a" 
-    -#     = link_to current_user.nickname, user_path(current_user), class: "current_user"
-    -#   -else
-    -#     = link_to "ログイン", new_user_session_path, class: "btn-a" 
-    -#     = link_to "新規登録", new_user_registration_path, class: "btn-a"
-
+      -# .search1 
+      -#   = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
+      -#     = text_field_tag :search 
+      -#     %p.fas.fa-search
+      -#     .search2
+      -#       = submit_tag 'Search', :name => nil ,class: "search10"
     = yield
