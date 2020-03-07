@@ -1,4 +1,24 @@
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@-webkit-keyframes bg-color {
+  0% { background-color:#FFFAFA;}
+  20% { background-color: #FFFFF0; }
+  40% { background-color: #FFFAF0; }
+  60% { background-color: #F8F8FF; }
+  80% { background-color: #F5F5F5; }
+  100% { background-color: #FFFFEE; }
+}
+@keyframes bg-color {
+  0% { background-color: #FFFAFA; }
+  20% { background-color: #FFFFF0; }
+  40% { background-color: #FFFAF0; }
+  60% { background-color: #F8F8FF; }
+  80% { background-color: #F5F5F5; }
+  100% { background-color: #FFFFEE; }
+}
+
 .blog-show {
   width: 100%;
   height: 100vh;
