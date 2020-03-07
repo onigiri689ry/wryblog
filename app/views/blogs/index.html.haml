@@ -1,27 +1,23 @@
-
-.boxbox
-
-.box
-
+.blogtop
   .slick-box
     .slick
       - @blogs.each do |blog|
         .blogimage-2
           = link_to blog_path(blog.id) do
             = image_tag blog.images[0].image_url,class:"abc"
-  .article-list2
+  .blogtop-article
     - @blogs.each do |blog|
-      .article
-        .blogimage
-          = link_to blog_path(blog.id), class: "www" do
+      .blogtop-article-list
+        .blogtop-article-list-image
+          = link_to blog_path(blog.id) do
             = image_tag blog.images[0].image_url,class:"blogimage-img"
-        .details
-          .title
+        .blogtop-article-list-details
+          .blogtop-article-list-details-title
             = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
-          .nametime
-            .username
+          .blogtop-article-list-details-nametime
+            .blogtop-article-list-details-nametime-username
               = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
-            .time
+            .blogtop-article-list-details-nametime-time
               =blog.created_at
     .pager
       = paginate(@blogs)

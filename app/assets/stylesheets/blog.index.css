@@ -1,6 +1,6 @@
 
 
-.article {
+.blogtop-article-list {
   opacity : 0;
   transform : translate(0, 45px);
   transition : all 1000ms;
