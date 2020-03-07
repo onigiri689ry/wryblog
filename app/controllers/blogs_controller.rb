@@ -48,7 +48,7 @@ class BlogsController < ApplicationController
     if tag_list = params[:blog][:tag_name].split(",") 
       @blog.update(update_params) && params.require(:blog).keys[0] == "images_attributes"
       @blog.save_blogs(tag_list)
-      redirect_to root_path ,notice: '商品を編集しました'
+      redirect_to root_path 
     else
       render :edit
     end
@@ -66,7 +66,7 @@ class BlogsController < ApplicationController
 
   private
   def set_blog
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by(params[:id])
   end
 
   def blog_params

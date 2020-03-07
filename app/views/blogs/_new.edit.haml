@@ -20,6 +20,8 @@
                   = f.fields_for :images, image do |img|
                     = img.file_field :image_url,  "data-id": "#{i}"
                     %li
+                      -if image.id.present?
+                        = image_tag "#{img.object.image_url}",size: "114x116",class:"write_image"
                     .btn-box
                       %a 編集
                       %a.delete-btn 削除
