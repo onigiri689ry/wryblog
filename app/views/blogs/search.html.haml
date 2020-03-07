@@ -1,26 +1,17 @@
-.boxbox
-  %p.mozi 記事を検索
-.search1 
-  = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
-    = text_field_tag :search 
-    .search2
-      = submit_tag 'Search', :name => nil ,class: "search10"
-.box
-  .article-list
-    記事一覧
-  .article-list2
+.usrshow
+  .usrshow-article
     - @blogs.each do |blog|
-      .article
-        .blogimage
-          = link_to blog_path(blog.id), class: "www" do
+      .usrshow-article-list
+        .usrshow-article-list-image
+          = link_to blog_path(blog.id) do
             = image_tag blog.images[0].image_url,class:"blogimage-img"
-        .details
-          .title
+        .usrshow-article-list-details
+          .usrshow-article-list-details-title
             = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
-          .nametime
-            .username
+          .usrshow-article-list-details-nametime
+            .usrshow-article-list-details-nametime-username
               = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
-            .time
+            .usrshow-article-list-details-nametime-time
               =blog.created_at
     .pager
       = paginate(@blogs)

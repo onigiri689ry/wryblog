@@ -21,8 +21,8 @@ $(function () {
     })
     .done(function (data) {
       var html = buildHTML(data);
-      $('.comments-a').append(html);
-      $('.textbox').val('');
+      $('.blog-show-box-comment-show').append(html);
+      $('.comment-box').val('');
       $('.form__submit').prop('disabled', false);
     })
     .fail(function () {

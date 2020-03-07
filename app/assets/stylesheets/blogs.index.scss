@@ -1,42 +1,5 @@
 
-.boxbox {
-  margin: 0px;
-	padding: 0 3%;
-	-webkit-text-size-adjust: none;
-	color: #666;
-	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
-	font-size: 16px;
-	line-height: 2;	
-  .mozi {
-    margin-bottom: 2%;
-    color: #fff;
-    padding: 1% 2%;
-    background: #80ad45;
-    border-radius: 10px;
-  }
-}
-.search1{
-  color: #666;	
-  margin-top: 15px;
-  .form-a{
-    height: 30px;
-    display: flex;
-    #search{
-      width: 150px;
-      height: 30px;
-      border-radius: 20px;
-    }
-    .search2{
-      text-align: right;
-      .search10{
-      height: 20px;
-      font-size: 13px;
-      }
-    }
-  }
-}
-
-.box {
+.blogtop {
   margin: 0px;
 	padding: 0 3%;;
 	-webkit-text-size-adjust: none;
@@ -45,65 +8,53 @@
 	font-size: 16px;	/*文字サイズ*/
   line-height: 2;		/*行間*/
   width:  100%;
-
-  .article-list {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #80ad45;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-
-  .article-list2{
+  &-article{
     padding: 10px; 
     width: 100%;
-    .article{
+    &-list{
       border-bottom-width: 1px;
       border-bottom-style: solid;
       display: flex;
       height: 33%;
       width: 100%;
-
-
-
-      .blogimage{
+      margin-top: 5%;
+      &-image{
         height:100%;
         width: 50%;
         margin: 0 auto;
-        &-img{
+        .blogimage-img{
           height:200px;
           width: 286px;
-
         }
       }
     
-      .details{
+      &-details{
         width: 50%;
         margin: 0 auto;
-        .title{
+        &-title{
           font-size: 20px;
           .blogs-title{
             color: black;
           }
         }
-        .nametime{
+        &-nametime{
           font-size: 15px;
           color: #999;
           display: flex;
-          .username{
+          &-username{
             margin-right: 10px;
             .blogs-user{
             color: #999;
             }
           }
-          .time{
+          &-time{
             color: #999;
           }
         }
       }
     }
     .pager{
-        height: 5vh;
+      height: 5vh;
       .pagination{
         margin-top:2%;
         margin-bottom: 2%;
@@ -141,7 +92,7 @@
     margin-top: 50px;
     color: #fff;
     padding: 10px 20px;
-    background: #80ad45;
+    background: #002200;
     border-radius: 10px;
   }
 

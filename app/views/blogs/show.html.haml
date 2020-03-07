@@ -1,40 +1,41 @@
 - image = @blog.images.first
 
-.show-main
-  .item-box
-    .tiem-box-1
+.blog-show
+  .blog-show-box
+    .blog-show-box-1
       = image_tag image.image_url.url,class:"main-image"
       %ul
         - @blog.images.each do |image|
           %li
             = image_tag image.image_url.url,class:"image-list"
-    .item-box__name
-      .item-box-title
+    .blog-show-box-blog
+      .blog-show-box-blog-title
         = @blog.title
-      .item-box-body
+      .blog-show-box-blog-body
         = simple_format(@blog.body)
 
     - if user_signed_in? && current_user.id == @blog.user_id
-      .blogManage
+      .blog-show-box-btn
         = link_to "編集", edit_blog_path(@blog.id), class: "blog-btn"
         = link_to "削除", blog_path(@blog.id), method: :delete, class: "blog-btn"
   
-    .box1
-      .comentnew
+    .blog-show-box-comment
+      .blog-show-box-comment-new
         - if current_user
           = form_for([@blog, @comment], local: true, id: "new_comment")  do |f|
-            = f.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
-            = f.submit "SEND", class: "form__submit"
+            .blog-show-box-comment-new-feald
+              = f.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-box"
+              = f.submit "SEND", class: "form__submit"
         - else
           %strong
             ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
-      .comments-a
+      .blog-show-box-comment-show
         %h4 
           <コメント一覧>
         - if @comments
           - @comments.each do |comment|
-            .comment-b
+            .blog-show-box-comment-show-one
               %strong.com
                 =link_to comment.user.nickname, "/users/#{comment.user_id}", class:"com-user"
                 = comment.text

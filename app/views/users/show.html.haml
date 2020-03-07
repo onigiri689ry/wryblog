@@ -1,18 +1,21 @@
-.box
-  .article-list
-    = @user.nickname
-  .article-list2
+.usrshow
+  .usrshow-name
+    .usrshow-name-user
+      .usrshow-name-user-box
+        = @user.nickname
+  .usrshow-article
     - @blogs.each do |blog|
-      .article
-        .blogimage
-          = image_tag blog.images[0].image_url,class:"blogimage-img"
-        .details
-          .title
+      .usrshow-article-list
+        .usrshow-article-list-image
+          = link_to blog_path(blog.id) do
+            = image_tag blog.images[0].image_url,class:"blogimage-img"
+        .usrshow-article-list-details
+          .usrshow-article-list-details-title
             = link_to blog.title, blog_path(blog.id), class: 'blogs-title'
-          .nametime
-            .username
+          .usrshow-article-list-details-nametime
+            .usrshow-article-list-details-nametime-username
               = link_to blog.user.nickname, user_path(blog.user), class: 'blogs-user'
-            .time
+            .usrshow-article-list-details-nametime-time
               =blog.created_at
     .pager
       = paginate(@blogs)

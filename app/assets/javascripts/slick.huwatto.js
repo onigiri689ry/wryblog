@@ -28,7 +28,7 @@ $(function () {
 
 
   $(window).scroll(function () {
-    $('.article').each(function () {
+    $('.blogtop-article-list').each(function () {
       var elemPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
