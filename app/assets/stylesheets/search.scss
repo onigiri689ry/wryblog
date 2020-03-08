@@ -7,14 +7,13 @@
     #search{
       width: 150px;
       height: 30px;
-      border-radius: 20px;
+      background:#eee;
+      outline:0;
+      border: 0px none;
     }
-    .search2{
-      text-align: right;
-      .search10{
-      height: 20px;
-      font-size: 13px;
-      }
+    .search-bun{
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 900;
     }
   }
 }

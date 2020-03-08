@@ -1,15 +1,21 @@
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 9998;
+}
+
 .dropdwn{
     max-width: 100%;
     display: flex;
     justify-content:space-between;
     padding: 0 3%;
     background-color: #002200;
-    height: 70px;
+    height: 50px;
     text-align: center;
 }
 
 .kkk{
-    display:flex
+    display:flex;
 }
 
 .bigtitle{
@@ -34,6 +40,7 @@ li{
     padding: 5px;
     display: block;
     cursor: pointer;
+    width: 120px;
 }
 
 .dropdwn>li{
@@ -55,10 +62,8 @@ i{
     display: none;
     position: absolute;
     z-index: 9999; 
-    margin-left: -5px;
-    margin-top: 5px;
     padding: 0;
-    background-color: #EEEEEE;
+    background-color: #002200;
 }
 
 .dropdwn_menu li{
@@ -68,13 +73,14 @@ i{
 .dropdwn_menu li a{
     padding: 5px 0;
     display: block;
-    color: rgb(65, 65, 65);
+    color: white;
     font-family: 'Noto Sans JP', sans-serif;
     
 }
 
+
+
 li a:hover{
-    color: green
-;
-    
+    background-color: gainsboro;
+    color: black;
 }
