@@ -4,9 +4,10 @@
   .blog-show-box
     .blog-show-box-1
       = image_tag image.image_url.url,class:"main-image"
-      %ul
+    .blog-show-box-2
+      %ul.main-image-ul
         - @blog.images.each do |image|
-          %li
+          %li.image-list-li
             = image_tag image.image_url.url,class:"image-list"
     .blog-show-box-blog
       .blog-show-box-blog-title
