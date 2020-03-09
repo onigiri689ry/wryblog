@@ -105,12 +105,12 @@
               border-left: 1px solid #80ad45;
               border-right: 1px solid #80ad45;
               background-color: white;
-              & li {
+              .write__image-select__li {
                 width: 114px;
                 height: 116px;
                 margin: 0 auto;
                 & img {
-                  object-fit: contain;
+                  object-fit: cover;
                 }
               }
               & .btn-box {
