@@ -52,7 +52,7 @@
     display: inline;
 }
 
-i{
+.fa-door-open{
     font-size: 30px;
     margin: 15px 0 0 2%;
     color:#fff;
@@ -60,7 +60,7 @@ i{
     padding-right: 20px;
     width: 110px;
 }
-i:hover{
+.fa-door-open:hover{
     background-color: gainsboro;
     color: black;
 }
