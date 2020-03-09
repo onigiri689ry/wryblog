@@ -13,29 +13,29 @@
       %ul.dropdwn
         %li
           = link_to "wryblog", root_path, class: 'bigtitle'
-        .kkk
+        .header-1
           .search1 
             = form_tag(search_blogs_path,:method => 'get' ,class: "form-a")do 
               = text_field_tag :search 
               = submit_tag "\uF002",class: "search-bun"
 
           -if user_signed_in?
-            %li
+            %li.drop
               %p.name
                 = current_user.nickname
               %ul.dropdwn_menu
-                %li
+                %li.drop
                   = link_to "記事一覧", user_path(current_user),class:"dropdwn-a"
-                %li
+                %li.drop
                   = link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"dropdwn-a"
 
           -else
             %li
               %i.fas.fa-door-open
               %ul.dropdwn_menu
-                %li
+                %li.drop
                   = link_to "ログイン", new_user_session_path ,class:"dropdwn-a"
-                %li
+                %li.drop
                   = link_to "新規登録", new_user_registration_path,class:"dropdwn-a"
 
     = yield
